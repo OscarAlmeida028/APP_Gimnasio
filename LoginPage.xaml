@@ -3,10 +3,93 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APP_Gimnasio.LoginPage"
              Title="LoginPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout
+       Spacing="25"
+       Padding="30,0"
+       VerticalOptions="Center">
+
+        <Image Source="dotnet_bot.png"
+              HeightRequest="150"
+              WidthRequest="150"/>
+
+        <VerticalStackLayout
+           Spacing="5">
+            <Label Text="Bienvenido!"
+                  FontSize="28"
+                  TextColor="Gray"
+                  HorizontalTextAlignment="Center"/>
+            <Label Text="Ingresa a tu cuenta"
+                  FontSize="18"
+                  TextColor="Gray"
+                  HorizontalTextAlignment="Center"/>
+        </VerticalStackLayout>
+
+        <StackLayout 
+           Orientation="Horizontal">
+            <Frame ZIndex="1"
+                  HasShadow="True"
+                  BorderColor="White"
+                  HeightRequest="60"
+                  WidthRequest="60"
+                  CornerRadius="28"
+                  Padding="0">
+                <Image Source="dotnet_bot.png"
+                      HeightRequest="20"
+                      WidthRequest="20"/>
+            </Frame>
+            <Frame HeightRequest="45"
+                  Margin="-20,0,0,0"
+                  HasShadow="True"
+                  BorderColor="White"
+                  HorizontalOptions="FillAndExpand"
+                  Padding="0">
+                <Entry x:Name="Username" 
+                      VerticalOptions="FillAndExpand"
+                      Margin="20,0,0,0"
+                      Placeholder="Usuario"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame ZIndex="1"
+                  HasShadow="True"
+                  BorderColor="White"
+                  HeightRequest="56"
+                  WidthRequest="56"
+                  CornerRadius="28">
+                <Image Source="dotnet_bot.png"
+                      HeightRequest="20"
+                      WidthRequest="20"/>
+            </Frame>
+            <Frame HeightRequest="45"
+                  Margin="-20,0,0,0"
+                  HasShadow="True"
+                  BorderColor="White"
+                  HorizontalOptions="FillAndExpand"
+                  Padding="0">
+                <Entry x:Name="Password"
+                      VerticalOptions="Center"
+                      Margin="20,0,0,0"
+                      Placeholder="Contraseña"
+                      IsPassword="True"/>
+            </Frame>
+        </StackLayout>
+
+        <Button Text="Ingresar"
+               FontSize="Medium"
+               WidthRequest="100"
+               CornerRadius="20"
+               HorizontalOptions="Center"
+               BackgroundColor="Purple"
+               Clicked="OnClickLogin">
+        </Button>
+
+        <StackLayout Orientation="Vertical" Spacing="-5" HorizontalOptions="Center">
+            <Label Text="Aún no tienes cuenta?" TextColor="Gray" />
+            <Button Text="Registrate"
+                    TextColor="DarkCyan" 
+                    Background="White"
+                    Clicked="OnClickRegistro"/>
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>
