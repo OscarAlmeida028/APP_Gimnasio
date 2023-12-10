@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APP_Gimnasio.RegistroPage"
              BackgroundColor="Transparent"
+             NavigationPage.HasNavigationBar="False"
              Title="Registro"
              BackgroundImageSource="fondo_login.png">
 
@@ -14,7 +15,7 @@
         
         <VerticalStackLayout
            Spacing="10">
-            <Label Text="Registrate!"
+            <Label Text="Registrarse!"
                   FontSize="28"
                   TextColor="Black"
                   HorizontalTextAlignment="Center"/>
@@ -56,14 +57,19 @@
             </Frame>
         </StackLayout>
 
-        <Button Text="REGISTRARSE"
+        <StackLayout>
+            <Button Text="REGISTRARSE"
                FontSize="Medium"
                WidthRequest="300"
                CornerRadius="20"
                HorizontalOptions="Center"
                BackgroundColor="Green"
                 Clicked="OnClickRegistro">
-        </Button>
-
+            </Button>
+            <Button Text="Volver"
+                    TextColor="DarkCyan" 
+                    Background="Transparent"
+                    Clicked="OnClickVolver"/>
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>

@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APP_Gimnasio.HomePage"
-             NavigationPage.HasBackButton="True"
+             NavigationPage.HasBackButton="False"
              BackgroundImageSource="fondo_app.jpg"
-             Title="HomePage">
+             Title="Inicio">
 
 
     <VerticalStackLayout 
@@ -17,8 +17,8 @@
                 Source="imagen_home.png"
                 HeightRequest="200"/>
         <StackLayout
-            Spacing="5"
-            Orientation="Horizontal">
+            Orientation="Horizontal"
+            HorizontalOptions="Center">
             
             <Frame ZIndex="1"
                   HasShadow="True"
@@ -33,17 +33,20 @@
                     WidthRequest="20"
                     Clicked="OnClikDetallesMiembro"/>
             </Frame>
-            <Frame HeightRequest="45"
-                  Margin="-20,0,0,0"
-                  HasShadow="True"
-                  BorderColor="White"
-                  HorizontalOptions="FillAndExpand"
-                  Padding="0">
+            <Frame
+                HeightRequest="45"   
+                WidthRequest="200"
+                Margin="-20,0,0,0"
+                HasShadow="True"
+                BorderColor="White"
+                HorizontalOptions="FillAndExpand"
+                Padding="0">
                 <Label x:Name="Username"
                        VerticalOptions="Center"
+                       HorizontalOptions="Center"
                        Text="Hola"
                        FontFamily="NovaSquare-Regular"
-                       Margin="20,0,0,0"/>
+                       Margin="0,0,0,0"/>
             </Frame>
         </StackLayout>
 
@@ -64,7 +67,7 @@
                         Source="pago.png"
                         VerticalOptions="FillAndExpand"
                         HorizontalOptions="Fill"
-                        BackgroundColor="Beige"
+                        BackgroundColor="AliceBlue"
                         Clicked="OnClickHistorialPagos"/>
                 </Frame>
                     <Label
@@ -89,10 +92,10 @@
                         Source="visita.png"
                         VerticalOptions="FillAndExpand"
                         HorizontalOptions="Fill"
-                        BackgroundColor="Beige"
+                        BackgroundColor="AliceBlue"
                         Clicked="OnClickHistorialVisitas"/>
                  </Frame>
-                 <Label Text="Visita"
+                 <Label Text="Visitas"
                         FontSize="Medium"
                         HorizontalOptions="Center"
                         FontAttributes="Bold"
@@ -113,7 +116,7 @@
                         Source="membresia.png"
                         VerticalOptions="Fill"
                         HorizontalOptions="Fill"
-                        BackgroundColor="Beige"
+                        BackgroundColor="AliceBlue"
                         Clicked="OnClickDetallesMembresia"/>
                 </Frame>
                 <Label Text="Membresía"

@@ -11,4 +11,9 @@ public partial class RegistroPage : ContentPage
     {
 		await Navigation.PushAsync(new LoginPage());
     }
+
+    private async void OnClickVolver(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new LoginPage());
+    }
 }
