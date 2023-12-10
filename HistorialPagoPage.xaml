@@ -10,7 +10,7 @@
             HorizontalOptions="Center"
             FontAttributes="Bold"
             FontFamily="NovaSquare-Regular"/>
-        <ListView x:Name="listaProductos"
+        <ListView x:Name="listaVisitas"
                   RowHeight="80">
             <ListView.ItemTemplate>
                 <DataTemplate>
