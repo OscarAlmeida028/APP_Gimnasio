@@ -2,11 +2,93 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APP_Gimnasio.DetallesMembresiaPage"
-             Title="DetallesMembresiaPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             Title="Detalles Membresía"
+             BackgroundImageSource="fondo_app.png">
+    <VerticalStackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="FillAndExpand"
+        Spacing="10">
+        <Label
+            Text="Membresía"
+            FontSize="50"
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            FontFamily="NovaSquare-Regular"/>
+        <Image
+            Source="membresia.png"
+            HeightRequest="200"/>
+        <!-- OCampos de texto -->
+        <StackLayout
+            BackgroundColor="Transparent"
+            Spacing="1">
+            <StackLayout
+                   Padding="5">
+                <Label
+                    Text="Tipo:"
+                    FontFamily="NovaSquare-Regular"
+                    HorizontalOptions="Center"/>
+                <Frame
+                       HeightRequest="30"
+                       WidthRequest="300"
+                       Margin="0,0,0,0"
+                       HasShadow="True"
+                       BorderColor="White"
+                       HorizontalOptions="Center"
+                       Padding="0">
+                    <Label
+                        x:Name="tipo"
+                        Text="Oro"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        Margin="0,0,0,0"/>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout
+                   Padding="5">
+                <Label
+                    Text="Duración(Días):"
+                    FontFamily="NovaSquare-Regular"
+                    HorizontalOptions="Center"/>
+                <Frame
+                       HeightRequest="30"
+                       WidthRequest="300"
+                       Margin="0,0,0,0"
+                       HasShadow="True"
+                       BorderColor="White"
+                       HorizontalOptions="Center"
+                       Padding="0">
+                    <Label
+                        x:Name="duracion"
+                        Text="90"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        Margin="0,0,0,0"/>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout
+                   Padding="5">
+                <Label
+                    Text="Precio:"
+                    FontFamily="NovaSquare-Regular"
+                    HorizontalOptions="Center"/>
+                <Frame
+                       HeightRequest="30"
+                       WidthRequest="300"
+                       Margin="0,0,0,0"
+                       HasShadow="True"
+                       BorderColor="White"
+                       HorizontalOptions="Center"
+                       Padding="0">
+                    <Label
+                        x:Name="precio"
+                        Text="40"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        Margin="0,0,0,0"/>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>

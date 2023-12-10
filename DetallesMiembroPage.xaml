@@ -125,7 +125,5 @@
                 VerticalOptions="Center"/>
             </StackLayout>
         </Frame>
-
-            
     </VerticalStackLayout>
 </ContentPage>
