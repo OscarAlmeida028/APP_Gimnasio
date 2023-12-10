@@ -2,11 +2,68 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APP_Gimnasio.RegistroPage"
-             Title="RegistroPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             BackgroundColor="Transparent"
+             Title="Registro"
+             BackgroundImageSource="fondo_login.png">
+
+    <VerticalStackLayout
+        
+       Spacing="25"
+       Padding="30,0"
+       VerticalOptions="Center">
+        
+        <VerticalStackLayout
+           Spacing="10">
+            <Label Text="Registrate!"
+                  FontSize="28"
+                  TextColor="Black"
+                  HorizontalTextAlignment="Center"/>
+            
+            <Label Text="Crea un nuevo usuario"
+                  FontSize="18"
+                  TextColor="Gray"
+                  HorizontalTextAlignment="Center"/>
+        </VerticalStackLayout>
+
+        <StackLayout 
+           Orientation="Horizontal">
+            <Frame HeightRequest="45"
+                  Margin="-20,0,0,0"
+                  HasShadow="True"
+                  BorderColor="White"
+                  HorizontalOptions="FillAndExpand"
+                  Padding="0">
+                <Entry x:Name="UsuarioNuevo" 
+                      VerticalOptions="FillAndExpand"
+                      Margin="20,0,0,0"
+                      Placeholder="Nuevo usuario"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+
+            <Frame HeightRequest="45"
+                  Margin="-20,0,0,0"
+                  HasShadow="True"
+                  BorderColor="White"
+                  HorizontalOptions="FillAndExpand"
+                  Padding="0">
+                <Entry x:Name="PasswordNueva"
+                      VerticalOptions="Center"
+                      Margin="20,0,0,0"
+                      Placeholder="Nueva contraseña"
+                      IsPassword="True"/>
+            </Frame>
+        </StackLayout>
+
+        <Button Text="REGISTRARSE"
+               FontSize="Medium"
+               WidthRequest="300"
+               CornerRadius="20"
+               HorizontalOptions="Center"
+               BackgroundColor="Green"
+                Clicked="OnClickRegistro">
+        </Button>
+
     </VerticalStackLayout>
 </ContentPage>

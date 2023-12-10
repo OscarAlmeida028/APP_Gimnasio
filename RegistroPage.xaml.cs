@@ -6,4 +6,9 @@ public partial class RegistroPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private async void OnClickRegistro(object sender, EventArgs e)
+    {
+		await Navigation.PushAsync(new LoginPage());
+    }
 }
