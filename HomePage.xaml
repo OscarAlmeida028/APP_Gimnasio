@@ -2,61 +2,125 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APP_Gimnasio.HomePage"
-             Title="HomePage"
-             NavigationPage.HasBackButton="False">
+             NavigationPage.HasBackButton="True"
+             BackgroundImageSource="fondo_app.jpg"
+             Title="HomePage">
+
+
     <VerticalStackLayout 
-        Spacing="80"
+        Spacing="40"
         Padding="30,0"
-        VerticalOptions="CenterAndExpand"
-        HorizontalOptions="CenterAndExpand">
-        <Label x:Name="Username"
-               Text="Usuario"
-               FontFamily="OpenSansSemibold"
-               FontAttributes="Bold"
-               FontAutoScalingEnabled="True"
-               FontSize="80"
-               HorizontalOptions="Center"
-               VerticalOptions="StartAndExpand"/>
-        <ImageButton 
-            Source="dotnet_bot.png"/>
+        VerticalOptions="Center"
+        HorizontalOptions="FillAndExpand">
+        
+        <Image
+                Source="imagen_home.png"
+                HeightRequest="200"/>
+        <StackLayout
+            Spacing="5"
+            Orientation="Horizontal">
+            
+            <Frame ZIndex="1"
+                  HasShadow="True"
+                  BorderColor="White"
+                  HeightRequest="60"
+                  WidthRequest="60"
+                  CornerRadius="28"
+                  Padding="0">
+                <ImageButton
+                    Source="usuario.png"
+                    HeightRequest="20"
+                    WidthRequest="20"
+                    Clicked="OnClikDetallesMiembro"/>
+            </Frame>
+            <Frame HeightRequest="45"
+                  Margin="-20,0,0,0"
+                  HasShadow="True"
+                  BorderColor="White"
+                  HorizontalOptions="FillAndExpand"
+                  Padding="0">
+                <Label x:Name="Username"
+                       VerticalOptions="Center"
+                       Text="Hola"
+                       FontFamily="NovaSquare-Regular"
+                       Margin="20,0,0,0"/>
+            </Frame>
+        </StackLayout>
 
-        <StackLayout 
+        <StackLayout
             Orientation="Horizontal"
-            HorizontalOptions="Fill"
-            Spacing="20">
-            <StackLayout Orientation="Vertical"
-                         Spacing="5">
-                <ImageButton
-                Source="dotnet_bot.png"
-                VerticalOptions="FillAndExpand"
-                HeightRequest="100"
-                WidthRequest="100"/>
-                <Label Text="Hola"
+            Spacing="10">
+                <!-- Primer elemento del StackLayout -->
+                <StackLayout Orientation="Vertical"
+                 Spacing="5">
+                <Frame ZIndex="1"
+                      HasShadow="True"
+                      BorderColor="White"
+                      HeightRequest="200"
+                      WidthRequest="100"
+                      CornerRadius="20"
+                      Padding="0">
+                    <ImageButton
+                        Source="pago.png"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="Fill"
+                        BackgroundColor="Beige"
+                        Clicked="OnClickHistorialPagos"/>
+                </Frame>
+                    <Label
+                        Text="Pagos"
+                        FontSize="Medium"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold"
+                        FontFamily="NovaSquare-Regular"/>
+                </StackLayout>
+                <!-- Segundo elemento del StackLayout -->
+                <StackLayout Orientation="Vertical"
+                 Spacing="5">
+                <Frame 
+                    ZIndex="1"
+                    HasShadow="True"
+                    BorderColor="White"
+                    HeightRequest="200"
+                    WidthRequest="100"
+                    CornerRadius="20"
+                    Padding="0">
+                    <ImageButton
+                        Source="visita.png"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="Fill"
+                        BackgroundColor="Beige"
+                        Clicked="OnClickHistorialVisitas"/>
+                 </Frame>
+                 <Label Text="Visita"
+                        FontSize="Medium"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold"
+                        FontFamily="NovaSquare-Regular"/>
+                </StackLayout>
+                <!-- Tercer elemento del StackLayout -->
+                <StackLayout Orientation="Vertical"
+                 Spacing="5">
+                <Frame
+                    ZIndex="1"
+                    HasShadow="True"
+                    BorderColor="White"
+                    HeightRequest="200"
+                    WidthRequest="100"
+                    CornerRadius="20"
+                    Padding="0">
+                    <ImageButton
+                        Source="membresia.png"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Fill"
+                        BackgroundColor="Beige"
+                        Clicked="OnClickDetallesMembresia"/>
+                </Frame>
+                <Label Text="Membresía"
                        FontSize="Medium"
-                       HorizontalOptions="Center"/>
-            </StackLayout>
-
-            <StackLayout Orientation="Vertical"
-                         Spacing="5">
-                <ImageButton
-                Source="dotnet_bot.png"
-                VerticalOptions="FillAndExpand"
-                HeightRequest="100"
-                WidthRequest="100"/>
-                <Label Text="Hola"
-                       FontSize="Medium"
-                       HorizontalOptions="Center"/>
-            </StackLayout>
-            <StackLayout Orientation="Vertical"
-                         Spacing="5">
-                <ImageButton
-                Source="dotnet_bot.png"
-                VerticalOptions="FillAndExpand"
-                HeightRequest="100"
-                WidthRequest="100"/>
-                <Label Text="Hola"
-                       FontSize="Medium"
-                       HorizontalOptions="Center"/>
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       FontFamily="NovaSquare-Regular"/>
             </StackLayout>
         </StackLayout>
     </VerticalStackLayout>
