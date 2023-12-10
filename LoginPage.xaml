@@ -4,6 +4,7 @@
              x:Class="APP_Gimnasio.LoginPage"
              BackgroundColor="Transparent"
              Title="Iniciar sesión"
+             NavigationPage.HasNavigationBar="False"
              BackgroundImageSource="fondo_login.png">
 
     <VerticalStackLayout
@@ -84,13 +85,13 @@
                WidthRequest="100"
                CornerRadius="20"
                HorizontalOptions="Center"
-               BackgroundColor="Purple"
+               BackgroundColor="Green"
                Clicked="OnClickLogin">
         </Button>
 
         <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="Center">
             <Label Text="Aún no tienes cuenta?" TextColor="Gray" />
-            <Button Text="Registrate"
+            <Button Text="Registrarse"
                     TextColor="DarkCyan" 
                     Background="Transparent"
                     Clicked="OnClickRegistro"/>
