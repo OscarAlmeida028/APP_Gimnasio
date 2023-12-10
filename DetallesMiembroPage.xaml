@@ -2,11 +2,130 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APP_Gimnasio.DetallesMiembroPage"
-             Title="DetallesMiembroPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             BackgroundImageSource="fondo_app.jpg"
+             Title="Detalles de usuario">
+    <VerticalStackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="FillAndExpand"
+        Spacing="50">
+        <!-- Texto e imagen -->
+        <StackLayout
+            Spacing="10">
+            <Label
+                Text="Bienvenido"
+                x:Name="idUsuario"
+                FontSize="40"
+                FontFamily="NovaSquare-Regular"
+                HorizontalOptions="Center"/>
+            <Frame
+                Padding="10"
+                CornerRadius="100"
+                HeightRequest="200"
+                WidthRequest="200">
+                <Image
+                    Source="usuario.png"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"/>
+            </Frame>
+        </StackLayout>
+
+        <!-- OCampos de texto -->
+        <StackLayout
+            BackgroundColor="Transparent"
+            Spacing="1">
+            <StackLayout
+                   Padding="5">
+                <Label
+                    Text="Usuario:"
+                    FontFamily="NovaSquare-Regular"
+                    HorizontalOptions="Center"/>
+                <Frame
+                       HeightRequest="30"
+                       WidthRequest="300"
+                       Margin="0,0,0,0"
+                       HasShadow="True"
+                       BorderColor="White"
+                       HorizontalOptions="Center"
+                       Padding="0">
+                    <Label
+                        x:Name="Nombre"
+                        Text="Gabriel Pozo"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        Margin="0,0,0,0"/>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout
+                   Padding="5">
+                <Label
+                    Text="Correo electrónico:"
+                    FontFamily="NovaSquare-Regular"
+                    HorizontalOptions="Center"/>
+                <Frame
+                       HeightRequest="30"
+                       WidthRequest="300"
+                       Margin="0,0,0,0"
+                       HasShadow="True"
+                       BorderColor="White"
+                       HorizontalOptions="Center"
+                       Padding="0">
+                    <Label
+                        x:Name="Correo"
+                        Text="gabopzito@gmail.com"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        Margin="0,0,0,0"/>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout
+                   Padding="5">
+                <Label
+                    Text="Fecha inscripción:"
+                    FontFamily="NovaSquare-Regular"
+                    HorizontalOptions="Center"/>
+                <Frame
+                       HeightRequest="30"
+                       WidthRequest="300"
+                       Margin="0,0,0,0"
+                       HasShadow="True"
+                       BorderColor="White"
+                       HorizontalOptions="Center"
+                       Padding="0">
+                    <Label
+                        x:Name="Fecha"
+                        Text="24-11-2023"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        Margin="0,0,0,0"/>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+
+
+
+        <Frame
+            CornerRadius="50"
+            HeightRequest="80"
+            WidthRequest="300">
+            <StackLayout
+            Orientation="Horizontal"
+            HorizontalOptions="Center"
+            Spacing="5">
+                <ImageButton
+                    Source="cerrar_sesion.png"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    Clicked="OnClickCerrarSesion"/>
+                <Label
+                Text="Cerrar Sesión"
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+            </StackLayout>
+        </Frame>
+
+            
     </VerticalStackLayout>
 </ContentPage>

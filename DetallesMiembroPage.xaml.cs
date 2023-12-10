@@ -6,4 +6,9 @@ public partial class DetallesMiembroPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private async void OnClickCerrarSesion(object sender, EventArgs e)
+    {
+		await Navigation.PushAsync(new LoginPage());
+    }
 }
