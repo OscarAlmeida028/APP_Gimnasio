@@ -2,13 +2,16 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APP_Gimnasio.LoginPage"
-             Title="LoginPage">
+             BackgroundColor="Transparent"
+             Title="Iniciar sesión"
+             BackgroundImageSource="fondo_login.png">
+
     <VerticalStackLayout
        Spacing="25"
        Padding="30,0"
        VerticalOptions="Center">
 
-        <Image Source="dotnet_bot.png"
+        <Image Source="imagen_login.png"
               HeightRequest="150"
               WidthRequest="150"/>
 
@@ -33,7 +36,7 @@
                   WidthRequest="60"
                   CornerRadius="28"
                   Padding="0">
-                <Image Source="dotnet_bot.png"
+                <Image Source="usuario.png"
                       HeightRequest="20"
                       WidthRequest="20"/>
             </Frame>
@@ -57,7 +60,8 @@
                   HeightRequest="56"
                   WidthRequest="56"
                   CornerRadius="28">
-                <Image Source="dotnet_bot.png"
+
+                <Image Source="password.png"
                       HeightRequest="20"
                       WidthRequest="20"/>
             </Frame>
@@ -84,11 +88,11 @@
                Clicked="OnClickLogin">
         </Button>
 
-        <StackLayout Orientation="Vertical" Spacing="-5" HorizontalOptions="Center">
+        <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="Center">
             <Label Text="Aún no tienes cuenta?" TextColor="Gray" />
             <Button Text="Registrate"
                     TextColor="DarkCyan" 
-                    Background="White"
+                    Background="Transparent"
                     Clicked="OnClickRegistro"/>
         </StackLayout>
     </VerticalStackLayout>
