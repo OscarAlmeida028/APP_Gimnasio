@@ -32,11 +32,11 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\icono.png" Color="White" ForegroundScale="0.65"/>
+		<MauiIcon Include="Resources\AppIcon\icono.png" Color="White" ForegroundScale="0.65" />
 		
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include ="Resources\Splash\splash.png" Color="Gray" BaseSize="128,128" ForegroundScale="0.65"/>
+		<MauiSplashScreen Include="Resources\Splash\splash.png" Color="Gray" BaseSize="128,128" ForegroundScale="0.65" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -50,11 +50,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\NovaSquare-Regular.ttf" />
 	  <None Remove="Resources\Images\fondo_app.jpg" />
 	  <None Remove="Resources\Images\fondo_login.jpg" />
+	  <None Remove="Resources\Images\imagen_home.png" />
 	  <None Remove="Resources\Images\imagen_login.png" />
+	  <None Remove="Resources\Images\membresia.png" />
+	  <None Remove="Resources\Images\pago.png" />
 	  <None Remove="Resources\Images\password.png" />
 	  <None Remove="Resources\Images\usuario.png" />
+	  <None Remove="Resources\Images\visita.png" />
 	</ItemGroup>
 
 	<ItemGroup>
