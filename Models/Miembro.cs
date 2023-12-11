@@ -7,6 +7,9 @@ namespace APP_Gimnasio.Models
         [Key]
         public int idMiembro { get; set; }
 
+        [Required]
+        public string passwordMiembro { get; set; }
+
         public int idMembresia { get; set; }
 
         [Required]
