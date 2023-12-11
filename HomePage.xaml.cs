@@ -17,6 +17,8 @@ public partial class HomePage : ContentPage
         base.OnAppearing();
         string username = Preferences.Get("username", "0");
         Username.Text = username;
+        string idmiembro = Preferences.Get("idmiembro", "0");
+        idMiembro.Text = idmiembro;
     }
 private async void OnClickHistorialPagos(object sender, EventArgs e)
     {
