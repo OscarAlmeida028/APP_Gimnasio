@@ -7,16 +7,31 @@
     <VerticalStackLayout
         VerticalOptions="Center"
         HorizontalOptions="FillAndExpand"
-        Spacing="50">
+        Spacing="30">
         <!-- Texto e imagen -->
         <StackLayout
             Spacing="10">
             <Label
                 Text="Bienvenido"
-                x:Name="idUsuario"
-                FontSize="40"
+                FontSize="30"
                 FontFamily="NovaSquare-Regular"
                 HorizontalOptions="Center"/>
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="Center">
+                <Label Text="ID de usuario: "
+                       FontSize="20"
+                       FontFamily="NovaSquare-Regular"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+                <Frame
+                    Padding="10">
+                    <Label 
+                        x:Name="idUsuario"
+                        Text="10"/>
+                </Frame>
+            </StackLayout>
+
             <Frame
                 Padding="10"
                 CornerRadius="100"
@@ -36,7 +51,7 @@
             <StackLayout
                    Padding="5">
                 <Label
-                    Text="Usuario:"
+                    Text="Nombre:"
                     FontFamily="NovaSquare-Regular"
                     HorizontalOptions="Center"/>
                 <Frame
@@ -48,14 +63,13 @@
                        HorizontalOptions="Center"
                        Padding="0">
                     <Label
-                        x:Name="Nombre"
-                        Text="Gabriel Pozo"
+                        x:Name="NombreMiembro"
+                        Text="Gabriel"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         Margin="0,0,0,0"/>
                 </Frame>
             </StackLayout>
-
             <StackLayout
                    Padding="5">
                 <Label
@@ -102,7 +116,6 @@
                 </Frame>
             </StackLayout>
         </StackLayout>
-
 
 
         <Frame
