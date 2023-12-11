@@ -20,17 +20,19 @@ public partial class LoginPage : ContentPage
     { 
         string username = Username.Text;
         string password = Password.Text;
-        Usuario user = new Usuario
+
+        Miembro miembro = new Miembro
         {
-            username = username,
-            password = password,
+            emailMiembro = username,
+            passwordMiembro = password,
         };
         
-        Usuario user2 = await _APIService.PostUser(user);
-        if (user2 != null)
+        Miembro miembro2 = await _APIService.LoginMiembro(miembro);
+        if (miembro2 != null)
         {
-            Preferences.Set("username", user2.username);
-            Preferences.Set("IdUser", user2.idUsuario);
+
+            Preferences.Set("username", miembro2.emailMiembro);
+            Preferences.Set("idmiembro", miembro2.idMiembro.ToString());
 
             var toast = Toast.Make("Ingreso Correcto", ToastDuration.Short, 14);
             await toast.Show();
