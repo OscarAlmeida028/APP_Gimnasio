@@ -16,7 +16,7 @@ public class APIService
     {
         // Añadir el archivo JSON al contenedor
 
-        _baseURL = "https://api-proyectop1-gimnasio-programacioniv20231210154329.azurewebsites.net";
+        _baseURL = "https://programacionivapiproyectop1gimnasio.azurewebsites.net/";
         httpClient = new HttpClient();
         httpClient.BaseAddress = new Uri(_baseURL);
     }
@@ -633,22 +633,21 @@ public class APIService
         }
     }
 
-    //Usuario
-    public async Task<Usuario> PostUser(Usuario user)
+    //Login
+    public async Task<Miembro> LoginMiembro(Miembro miembro)
     { 
-        var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
-        var response = await httpClient.GetAsync(_baseURL+ "/api/Usuarios");
+        var response = await httpClient.GetAsync(_baseURL+ "/api/Miembro");
 
         if (response.IsSuccessStatusCode )
         {
             var jsoResponse = await response.Content.ReadAsStringAsync();
-            List<Usuario> usuarios = JsonConvert.DeserializeObject<List<Usuario>>(jsoResponse);
+            List<Miembro> miembros = JsonConvert.DeserializeObject<List<Miembro>>(jsoResponse);
 
-            Usuario usuarioEncontrado = usuarios.Find(u => u.username == user.username && u.password == user.password);
+            Miembro miembroEncontrado = miembros.Find(m => m.emailMiembro == miembro.emailMiembro && m.passwordMiembro == miembro.passwordMiembro);
 
-            if (usuarioEncontrado != null)
+            if (miembroEncontrado != null)
             {
-                return usuarioEncontrado;
+                return miembroEncontrado;
             }
         }
         return null;
