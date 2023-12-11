@@ -1,3 +1,6 @@
+using APP_Gimnasio.Models;
+using System.Collections.ObjectModel;
+
 namespace APP_Gimnasio;
 
 public partial class HomePage : ContentPage
@@ -9,7 +12,13 @@ public partial class HomePage : ContentPage
         _APIService = apiservice;
 	}
 
-    private async void OnClickHistorialPagos(object sender, EventArgs e)
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        string username = Preferences.Get("username", "0");
+        Username.Text = username;
+    }
+private async void OnClickHistorialPagos(object sender, EventArgs e)
     {
 		await Navigation.PushAsync(new HistorialPagoPage(_APIService));
     }

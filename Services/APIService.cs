@@ -4,6 +4,7 @@ using APP_Gimnasio.Models;
 using Newtonsoft.Json;
 using System.Text;
 using APP_Gimnasio.Service;
+using System.Net.Http;
 
 public class APIService
 {
@@ -25,7 +26,7 @@ public class APIService
     {
 
         // Send a GET request to the API
-        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "api/Membresia");
+        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "/api/Membresia");
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -53,7 +54,7 @@ public class APIService
         var newMembresiaJSON = new StringContent(json, Encoding.UTF8, "application/json");
 
         // Send a POST request to the API
-        HttpResponseMessage response = await httpClient.PostAsync(_baseURL + "api/Membresia", newMembresiaJSON);
+        HttpResponseMessage response = await httpClient.PostAsync(_baseURL + "/api/Membresia", newMembresiaJSON);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -77,7 +78,7 @@ public class APIService
     {
 
         // Send a GET request to the API
-        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "api/Membresia/" + idMembresia);
+        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "/api/Membresia/" + idMembresia);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -104,7 +105,7 @@ public class APIService
         var newMembresiaJSON = new StringContent(json, Encoding.UTF8, "application/json");
 
         // Send a PUT request to the API
-        HttpResponseMessage response = await httpClient.PutAsync(_baseURL + "api/Membresia/" + idMembresia, newMembresiaJSON);
+        HttpResponseMessage response = await httpClient.PutAsync(_baseURL + "/api/Membresia/" + idMembresia, newMembresiaJSON);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -128,7 +129,7 @@ public class APIService
     public async Task<string> DeleteMembresia(int idMembresia)
     {
         // Send a GET request to the API
-        HttpResponseMessage response = await httpClient.DeleteAsync(_baseURL + "api/Membresia/" + idMembresia);
+        HttpResponseMessage response = await httpClient.DeleteAsync(_baseURL + "/api/Membresia/" + idMembresia);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -222,7 +223,7 @@ public class APIService
         var newMiembroJSON = new StringContent(json, Encoding.UTF8, "application/json");
 
         // Send a POST request to the API
-        HttpResponseMessage response = await httpClient.PostAsync(_baseURL + "api/Miembro", newMiembroJSON);
+        HttpResponseMessage response = await httpClient.PostAsync(_baseURL + "/api/Miembro", newMiembroJSON);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -246,7 +247,7 @@ public class APIService
     {
 
         // Send a GET request to the API
-        HttpResponseMessage response = await httpClient.DeleteAsync(_baseURL + "api/Miembro/" + idMiembro);
+        HttpResponseMessage response = await httpClient.DeleteAsync(_baseURL + "/api/Miembro/" + idMiembro);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -267,7 +268,7 @@ public class APIService
     {
 
         // Send a GET request to the API
-        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "api/Miembro");
+        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "/api/Miembro");
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -291,7 +292,7 @@ public class APIService
     {
 
         // Send a GET request to the API
-        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "api/Miembro/" + idMiembro);
+        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "/api/Miembro/" + idMiembro);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -318,7 +319,7 @@ public class APIService
         var newProductJSON = new StringContent(json, Encoding.UTF8, "application/json");
 
         // Send a PUT request to the API
-        HttpResponseMessage response = await httpClient.PutAsync(_baseURL + "api/Miembro/" + idMiembro, newProductJSON);
+        HttpResponseMessage response = await httpClient.PutAsync(_baseURL + "/api/Miembro/" + idMiembro, newProductJSON);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -346,7 +347,7 @@ public class APIService
         var newPagoJSON = new StringContent(json, Encoding.UTF8, "application/json");
 
         // Send a POST request to the API
-        HttpResponseMessage response = await httpClient.PostAsync(_baseURL + "api/Pago", newPagoJSON);
+        HttpResponseMessage response = await httpClient.PostAsync(_baseURL + "/api/Pago", newPagoJSON);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -369,7 +370,7 @@ public class APIService
     {
 
         // Send a GET request to the API
-        HttpResponseMessage response = await httpClient.DeleteAsync(_baseURL + "api/Pago/" + idPago);
+        HttpResponseMessage response = await httpClient.DeleteAsync(_baseURL + "/api/Pago/" + idPago);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -390,7 +391,7 @@ public class APIService
     {
 
         // Send a GET request to the API
-        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "api/Pago");
+        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "/api/Pago");
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -414,7 +415,7 @@ public class APIService
     {
 
         // Send a GET request to the API
-        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "PagosPorMiembro/" + idMiembro);
+        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "/PagosPorMiembro/" + idMiembro);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -438,7 +439,7 @@ public class APIService
     {
 
         // Send a GET request to the API
-        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "api/Pago/" + idPago);
+        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "/api/Pago/" + idPago);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -465,7 +466,7 @@ public class APIService
         var newPagoJSON = new StringContent(json, Encoding.UTF8, "application/json");
 
         // Send a PUT request to the API
-        HttpResponseMessage response = await httpClient.PutAsync(_baseURL + "api/Pago/" + idPago, newPagoJSON);
+        HttpResponseMessage response = await httpClient.PutAsync(_baseURL + "/api/Pago/" + idPago, newPagoJSON);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -493,7 +494,7 @@ public class APIService
         var newVisitaJSON = new StringContent(json, Encoding.UTF8, "application/json");
 
         // Send a POST request to the API
-        HttpResponseMessage response = await httpClient.PostAsync(_baseURL + "api/Visita", newVisitaJSON);
+        HttpResponseMessage response = await httpClient.PostAsync(_baseURL + "/api/Visita", newVisitaJSON);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -517,7 +518,7 @@ public class APIService
     {
 
         // Send a GET request to the API
-        HttpResponseMessage response = await httpClient.DeleteAsync(_baseURL + "api/Visita/" + idVisita);
+        HttpResponseMessage response = await httpClient.DeleteAsync(_baseURL + "/api/Visita/" + idVisita);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -538,7 +539,7 @@ public class APIService
     {
 
         // Send a GET request to the API
-        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "api/Visita");
+        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "/api/Visita");
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -562,7 +563,7 @@ public class APIService
     {
 
         // Send a GET request to the API
-        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "VisitasPorMiembro/" + idMiembro);
+        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "/VisitasPorMiembro/" + idMiembro);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -586,7 +587,7 @@ public class APIService
     {
 
         // Send a GET request to the API
-        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "api/Visita/" + idVisita);
+        HttpResponseMessage response = await httpClient.GetAsync(_baseURL + "/api/Visita/" + idVisita);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -613,7 +614,7 @@ public class APIService
         var newVisitaJSON = new StringContent(json, Encoding.UTF8, "application/json");
 
         // Send a PUT request to the API
-        HttpResponseMessage response = await httpClient.PutAsync(_baseURL + "api/Visita/" + idVisita, newVisitaJSON);
+        HttpResponseMessage response = await httpClient.PutAsync(_baseURL + "/api/Visita/" + idVisita, newVisitaJSON);
 
         // Ensure the request was successful
         if (response.IsSuccessStatusCode)
@@ -630,6 +631,27 @@ public class APIService
         {
             throw new Exception($"Error: {response.StatusCode}");
         }
+    }
+
+    //Usuario
+    public async Task<Usuario> PostUser(Usuario user)
+    { 
+        var content = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
+        var response = await httpClient.GetAsync(_baseURL+ "/api/Usuarios");
+
+        if (response.IsSuccessStatusCode )
+        {
+            var jsoResponse = await response.Content.ReadAsStringAsync();
+            List<Usuario> usuarios = JsonConvert.DeserializeObject<List<Usuario>>(jsoResponse);
+
+            Usuario usuarioEncontrado = usuarios.Find(u => u.username == user.username && u.password == user.password);
+
+            if (usuarioEncontrado != null)
+            {
+                return usuarioEncontrado;
+            }
+        }
+        return null;
     }
 }
 

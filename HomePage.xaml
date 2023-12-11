@@ -49,6 +49,9 @@
                        Margin="0,0,0,0"/>
             </Frame>
         </StackLayout>
+        <Label x:Name="id"
+               FontSize="40"/>
+        
 
         <StackLayout
             Orientation="Horizontal"
