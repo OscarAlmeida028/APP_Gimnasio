@@ -29,10 +29,13 @@ public partial class LoginPage : ContentPage
         
         Miembro miembro2 = await _APIService.LoginMiembro(miembro);
         if (miembro2 != null)
-        {
-
-            Preferences.Set("username", miembro2.emailMiembro);
-            Preferences.Set("idmiembro", miembro2.idMiembro.ToString());
+        { 
+            Preferences.Set("idMiembro", miembro2.idMiembro.ToString());
+            Preferences.Set("idMembresia",miembro2.idMembresia.ToString());
+            Preferences.Set("nombre", miembro2.nombreMiembro);
+            Preferences.Set("apellido", miembro2.apellidoMiembro);
+            Preferences.Set("email", miembro2.emailMiembro);
+            Preferences.Set("fechaInscripcion", miembro2.fechaInscripcion.ToString());
 
             var toast = Toast.Make("Ingreso Correcto", ToastDuration.Short, 14);
             await toast.Show();
@@ -44,10 +47,5 @@ public partial class LoginPage : ContentPage
             var toast = Toast.Make("Nombre de usuario o password incorrecto", ToastDuration.Short, 14);
             await toast.Show();
         }
-    }
-
-    private async void OnClickRegistro(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new RegistroPage(_APIService));
     }
 }

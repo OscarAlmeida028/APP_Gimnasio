@@ -56,8 +56,13 @@
 	  <None Remove="Resources\Images\fondo_login.jpg" />
 	  <None Remove="Resources\Images\imagen_home.png" />
 	  <None Remove="Resources\Images\imagen_login.png" />
+	  <None Remove="Resources\Images\img_mebresia.jpg" />
+	  <None Remove="Resources\Images\img_pagos.png" />
+	  <None Remove="Resources\Images\img_visitas.jpg" />
+	  <None Remove="Resources\Images\localizacion.png" />
 	  <None Remove="Resources\Images\membresia.png" />
 	  <None Remove="Resources\Images\pago.png" />
+	  <None Remove="Resources\Images\pago_tarjeta.png" />
 	  <None Remove="Resources\Images\password.png" />
 	  <None Remove="Resources\Images\usuario.png" />
 	  <None Remove="Resources\Images\visita.png" />
@@ -77,12 +82,12 @@
 	  <Compile Update="DetallesMiembroPage.xaml.cs">
 	    <DependentUpon>DetallesMiembroPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="RegistroPage.xaml.cs">
-	    <DependentUpon>RegistroPage.xaml</DependentUpon>
-	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="CambioContra.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="DetallesMembresiaPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -102,9 +107,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MainPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="RegistroPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

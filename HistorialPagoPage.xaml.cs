@@ -7,7 +7,7 @@ namespace APP_Gimnasio;
 public partial class HistorialPagoPage : ContentPage
 {
     private readonly APIService _APIService;
-    ObservableCollection<Visita> visitas;
+    ObservableCollection<Pago> pagos;
     public HistorialPagoPage(APIService apiservice)
 	{
 		InitializeComponent();
@@ -17,8 +17,13 @@ public partial class HistorialPagoPage : ContentPage
     protected async override void OnAppearing()
     {
         base.OnAppearing();
-        List<Visita> ListaVisitas = await _APIService.GetVisitas();
-        visitas = new ObservableCollection<Visita>(ListaVisitas);
-        listaVisitas.ItemsSource = visitas;
+        base.OnAppearing();
+        string idMiembro = Preferences.Get("idMiembro", "0");
+        string correoMiembro = Preferences.Get("email", "0");
+        correo.Text = correoMiembro;
+        int.TryParse(idMiembro, out int id);
+        List<Pago> ListaPagos = await _APIService.GetPagosPorMiembro(id);
+        pagos = new ObservableCollection<Pago>(ListaPagos);
+        listaPagos.ItemsSource = pagos;
     }
 }

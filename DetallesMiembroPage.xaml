@@ -7,10 +7,10 @@
     <VerticalStackLayout
         VerticalOptions="Center"
         HorizontalOptions="FillAndExpand"
-        Spacing="30">
+        Spacing="10">
         <!-- Texto e imagen -->
         <StackLayout
-            Spacing="10">
+            Spacing="30">
             <Label
                 Text="Bienvenido"
                 FontSize="30"
@@ -55,9 +55,8 @@
                     FontFamily="NovaSquare-Regular"
                     HorizontalOptions="Center"/>
                 <Frame
-                       HeightRequest="30"
+                       HeightRequest="40"
                        WidthRequest="300"
-                       Margin="0,0,0,0"
                        HasShadow="True"
                        BorderColor="White"
                        HorizontalOptions="Center"
@@ -66,8 +65,7 @@
                         x:Name="NombreMiembro"
                         Text="Gabriel"
                         VerticalOptions="Center"
-                        HorizontalOptions="Center"
-                        Margin="0,0,0,0"/>
+                        HorizontalOptions="Center"/>
                 </Frame>
             </StackLayout>
             <StackLayout
@@ -77,9 +75,8 @@
                     FontFamily="NovaSquare-Regular"
                     HorizontalOptions="Center"/>
                 <Frame
-                       HeightRequest="30"
+                       HeightRequest="40"
                        WidthRequest="300"
-                       Margin="0,0,0,0"
                        HasShadow="True"
                        BorderColor="White"
                        HorizontalOptions="Center"
@@ -88,8 +85,7 @@
                         x:Name="Correo"
                         Text="gabopzito@gmail.com"
                         VerticalOptions="Center"
-                        HorizontalOptions="Center"
-                        Margin="0,0,0,0"/>
+                        HorizontalOptions="Center"/>
                 </Frame>
             </StackLayout>
 
@@ -100,9 +96,8 @@
                     FontFamily="NovaSquare-Regular"
                     HorizontalOptions="Center"/>
                 <Frame
-                       HeightRequest="30"
+                       HeightRequest="40"
                        WidthRequest="300"
-                       Margin="0,0,0,0"
                        HasShadow="True"
                        BorderColor="White"
                        HorizontalOptions="Center"
@@ -111,32 +106,39 @@
                         x:Name="Fecha"
                         Text="24-11-2023"
                         VerticalOptions="Center"
-                        HorizontalOptions="Center"
-                        Margin="0,0,0,0"/>
+                        HorizontalOptions="Center"/>
                 </Frame>
             </StackLayout>
         </StackLayout>
 
-
-        <Frame
+        <StackLayout
+            Spacing="10">
+            <Frame
             CornerRadius="50"
             HeightRequest="80"
             WidthRequest="300">
-            <StackLayout
+                <StackLayout
             Orientation="Horizontal"
             HorizontalOptions="Center"
-            Spacing="5">
-                <ImageButton
+            Spacing="10">
+                    <ImageButton
                     Source="cerrar_sesion.png"
                     HeightRequest="50"
                     WidthRequest="50"
                     Clicked="OnClickCerrarSesion"/>
-                <Label
+                    <Label
                 Text="Cerrar Sesión"
                 FontSize="Medium"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"/>
-            </StackLayout>
-        </Frame>
+                </StackLayout>
+            </Frame>
+            <Button
+            Text="Cambiar Contraseña"
+            FontSize="18"
+            TextColor="Blue" 
+            Background="Transparent"
+            Clicked="OnClicKCambiar"/>
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>

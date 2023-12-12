@@ -5,8 +5,9 @@
              Title="Detalles Membresía"
              BackgroundImageSource="fondo_app.png">
     <VerticalStackLayout
-        VerticalOptions="Center"
+        VerticalOptions="Start"
         HorizontalOptions="FillAndExpand"
+        Padding="30"
         Spacing="10">
         <Label
             Text="Membresía"
@@ -20,15 +21,18 @@
         <!-- OCampos de texto -->
         <StackLayout
             BackgroundColor="Transparent"
-            Spacing="1">
+            Spacing="20">
             <StackLayout
-                   Padding="5">
+                Padding="5"
+                Spacing="5">
                 <Label
                     Text="Tipo:"
+                    FontSize="30"
                     FontFamily="NovaSquare-Regular"
+                    FontAttributes="Bold"
                     HorizontalOptions="Center"/>
                 <Frame
-                       HeightRequest="30"
+                       HeightRequest="50"
                        WidthRequest="300"
                        Margin="0,0,0,0"
                        HasShadow="True"
@@ -38,20 +42,24 @@
                     <Label
                         x:Name="tipo"
                         Text="Oro"
+                        FontSize="30"
+                        FontFamily="NovaSquare-Regular"
                         VerticalOptions="Center"
-                        HorizontalOptions="Center"
-                        Margin="0,0,0,0"/>
+                        HorizontalOptions="Center"/>
                 </Frame>
             </StackLayout>
 
             <StackLayout
-                   Padding="5">
+                Padding="5"
+                Spacing="5">
                 <Label
                     Text="Duración(Días):"
+                    FontSize="30"
                     FontFamily="NovaSquare-Regular"
+                    FontAttributes="Bold"
                     HorizontalOptions="Center"/>
                 <Frame
-                       HeightRequest="30"
+                       HeightRequest="50"
                        WidthRequest="300"
                        Margin="0,0,0,0"
                        HasShadow="True"
@@ -61,20 +69,24 @@
                     <Label
                         x:Name="duracion"
                         Text="90"
+                        FontSize="30"
+                        FontFamily="NovaSquare-Regular"
                         VerticalOptions="Center"
-                        HorizontalOptions="Center"
-                        Margin="0,0,0,0"/>
+                        HorizontalOptions="Center"/>
                 </Frame>
             </StackLayout>
 
             <StackLayout
-                   Padding="5">
+                Padding="5"
+                Spacing="5">
                 <Label
                     Text="Precio:"
+                    FontSize="30"
                     FontFamily="NovaSquare-Regular"
+                    FontAttributes="Bold"
                     HorizontalOptions="Center"/>
                 <Frame
-                       HeightRequest="30"
+                       HeightRequest="50"
                        WidthRequest="300"
                        Margin="0,0,0,0"
                        HasShadow="True"
@@ -84,9 +96,10 @@
                     <Label
                         x:Name="precio"
                         Text="40"
+                        FontSize="30"
+                        FontFamily="NovaSquare-Regular"
                         VerticalOptions="Center"
-                        HorizontalOptions="Center"
-                        Margin="0,0,0,0"/>
+                        HorizontalOptions="Center"/>
                 </Frame>
             </StackLayout>
         </StackLayout>

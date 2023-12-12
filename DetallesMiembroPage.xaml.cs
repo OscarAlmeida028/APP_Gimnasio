@@ -1,4 +1,4 @@
-using Java.Lang;
+
 
 namespace APP_Gimnasio;
 
@@ -32,6 +32,12 @@ public partial class DetallesMiembroPage : ContentPage
 
     private async void OnClickCerrarSesion(object sender, EventArgs e)
     {
-		await Navigation.PushAsync(new LoginPage(_APIService));
+        Preferences.Set("username", "0");
+        await Navigation.PushAsync(new LoginPage(_APIService));
+    }
+
+    private async void OnClicKCambiar(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new CambioContra(_APIService));
     }
 }

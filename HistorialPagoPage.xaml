@@ -2,38 +2,84 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APP_Gimnasio.HistorialPagoPage"
+             BackgroundImageSource="fondo_app.jpg"
              NavigationPage.HasBackButton="True"
              Title="Historial de Pagos">
-    <VerticalStackLayout>
-        <Label
+    <VerticalStackLayout
+        Spacing="20">
+        <StackLayout
+            Spacing="10">
+            <Label
             Text="Pagos"
             FontSize="50"
             HorizontalOptions="Center"
             FontAttributes="Bold"
             FontFamily="NovaSquare-Regular"/>
-        <ListView x:Name="listaVisitas"
-                  RowHeight="80">
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="Center"
+                Spacing="10">
+                <Label
+                    Text="Lista de pagos de:"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    FontFamily="NovaSquare-Regular"/>
+                <Frame
+                    Padding="10"
+                    HasShadow="True"
+                    BorderColor="Transparent">
+                    <Label
+                        x:Name="correo"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Text="juan.pozo@udla.edu.ec"/>
+                </Frame>
+                
+            </StackLayout>
+
+        </StackLayout>
+        <ListView x:Name="listaPagos" RowHeight="100" HorizontalOptions="Center">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Orientation="Horizontal">
-                            <Image Source="dotnet_bot.png"
-                                   HeightRequest="50"
-                                   WidthRequest="100"/>
-                            <StackLayout Orientation="Vertical">
-                                <Label
-                                    Text="{Binding idVisita}"
-                                    VerticalOptions="Start"
-                                    FontSize="20"/>
-                                <Label
-                                    Text="{Binding miembroId}"
-                                    VerticalOptions="End"
-                                    FontSize="20"/>
+                        <Frame CornerRadius="20" Margin="10,0,10,0" HasShadow="True" HeightRequest="90" Padding="5">
+                            <StackLayout Orientation="Horizontal">
+                                <!-- Imagen -->
+                                <StackLayout Orientation="Vertical" Padding="10,15,00,10">
+                                    <Image Source="pago_tarjeta.png"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center"
+                                           HeightRequest="50"
+                                           WidthRequest="50"/>
+                                </StackLayout>
+
+                                <!-- Etiquetas -->
+                                <StackLayout Orientation="Vertical" Padding="10" Spacing="5">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Fecha: "
+                                               FontSize="20"
+                                               FontAttributes="Bold"
+                                               HorizontalOptions="Start"/>
+                                        <Label Text="{Binding fechaPago}"
+                                               VerticalOptions="Start"
+                                               FontSize="20"
+                                               FontAttributes="Bold"
+                                               TextColor="#333333"
+                                               HorizontalOptions="Center"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Monto: "
+                                       FontSize="20"
+                                       FontAttributes="Bold"/>
+                                        <Label Text="{Binding montoPago}"
+                                       VerticalOptions="End"
+                                       FontSize="20"/>
+                                    </StackLayout>
+                                </StackLayout>
                             </StackLayout>
-                        </StackLayout>
-
+                        </Frame>
                     </ViewCell>
-
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

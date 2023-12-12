@@ -8,8 +8,8 @@
 
 
     <VerticalStackLayout 
-        Spacing="20"
-        Padding="30,0"
+        Spacing="10"
+        Padding="40"
         VerticalOptions="Center"
         HorizontalOptions="FillAndExpand">
         <StackLayout
@@ -54,6 +54,7 @@
                     WidthRequest="20"
                     Clicked="OnClikDetallesMiembro"/>
             </Frame>
+
             <Frame
                 HeightRequest="45"   
                 WidthRequest="300"
@@ -66,89 +67,60 @@
                        VerticalOptions="Center"
                        HorizontalOptions="Center"
                        Text="Hola"
-                       FontFamily="NovaSquare-Regular"
-                       Margin="0,0,0,0"/>
+                       FontSize="18"
+                       FontFamily="NovaSquare-Regular"/>
             </Frame>
         </StackLayout>
-        <Label x:Name="id"
-               FontSize="40"/>
-        
 
         <StackLayout
-            Orientation="Horizontal"
+            Orientation="Vertical"
             Spacing="10">
                 <!-- Primer elemento del StackLayout -->
-                <StackLayout Orientation="Vertical"
-                 Spacing="5">
-                <Frame ZIndex="1"
-                      HasShadow="True"
-                      BorderColor="White"
-                      HeightRequest="200"
-                      WidthRequest="100"
-                      CornerRadius="20"
-                      Padding="0">
-                    <ImageButton
-                        Source="pago.png"
-                        VerticalOptions="FillAndExpand"
-                        HorizontalOptions="Fill"
-                        BackgroundColor="AliceBlue"
-                        Clicked="OnClickHistorialPagos"/>
-                </Frame>
-                    <Label
-                        Text="Pagos"
-                        FontSize="Medium"
-                        HorizontalOptions="Center"
-                        FontAttributes="Bold"
-                        FontFamily="NovaSquare-Regular"/>
-                </StackLayout>
-                <!-- Segundo elemento del StackLayout -->
-                <StackLayout Orientation="Vertical"
-                 Spacing="5">
-                <Frame 
-                    ZIndex="1"
-                    HasShadow="True"
-                    BorderColor="White"
-                    HeightRequest="200"
-                    WidthRequest="100"
-                    CornerRadius="20"
-                    Padding="0">
-                    <ImageButton
-                        Source="visita.png"
-                        VerticalOptions="FillAndExpand"
-                        HorizontalOptions="Fill"
-                        BackgroundColor="AliceBlue"
-                        Clicked="OnClickHistorialVisitas"/>
-                 </Frame>
-                 <Label Text="Visitas"
-                        FontSize="Medium"
-                        HorizontalOptions="Center"
-                        FontAttributes="Bold"
-                        FontFamily="NovaSquare-Regular"/>
-                </StackLayout>
-                <!-- Tercer elemento del StackLayout -->
-                <StackLayout Orientation="Vertical"
-                 Spacing="5">
-                <Frame
-                    ZIndex="1"
-                    HasShadow="True"
-                    BorderColor="White"
-                    HeightRequest="200"
-                    WidthRequest="100"
-                    CornerRadius="20"
-                    Padding="0">
-                    <ImageButton
-                        Source="membresia.png"
-                        VerticalOptions="Fill"
-                        HorizontalOptions="Fill"
-                        BackgroundColor="AliceBlue"
-                        Clicked="OnClickDetallesMembresia"/>
-                </Frame>
-                <Label Text="Membresía"
-                       FontSize="Medium"
-                       HorizontalOptions="Center"
-                       FontAttributes="Bold"
-                       FontFamily="NovaSquare-Regular"/>
-            </StackLayout>
+            <Frame
+                ZIndex="1"
+                HasShadow="True"
+                CornerRadius="20"
+                Padding="0"
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill"
+                BackgroundColor="#F7F7F7">
+                <ImageButton
+                    Source="img_pagos.png"
+                    WidthRequest="200"
+                    HeightRequest="100"
+                    Clicked="OnClickHistorialPagos"/>
+            </Frame>
+            <!-- Segundo elemento del StackLayout -->
+
+            <Frame
+                ZIndex="1"
+                HasShadow="True"
+                CornerRadius="20"
+                Padding="0"
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill"
+                BackgroundColor="#F7F7F7">
+                <ImageButton
+                    Source="img_visitas.jpg"
+                    WidthRequest="200"
+                    HeightRequest="100"
+                    Clicked="OnClickHistorialVisitas"/>
+            </Frame>
+            <!-- Tercer elemento del StackLayout -->
+            <Frame
+                ZIndex="1"
+                HasShadow="True"
+                CornerRadius="20"
+                Padding="0"
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill"
+                BackgroundColor="#F7F7F7">
+                <ImageButton
+                    Source="img_mebresia.jpg"
+                    WidthRequest="200"
+                    HeightRequest="100"
+                    Clicked="OnClickDetallesMembresia"/>
+            </Frame>
         </StackLayout>
     </VerticalStackLayout>
 </ContentPage>

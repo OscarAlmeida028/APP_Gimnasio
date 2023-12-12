@@ -11,17 +11,25 @@ public partial class HomePage : ContentPage
 		InitializeComponent();
         _APIService = apiservice;
 	}
-
+    private async void validarLogin()
+    {
+        if (Preferences.Get("idMiembro", "0").Equals("0"))
+        {
+            await Navigation.PushAsync(new LoginPage(_APIService));
+        }
+    }
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        string username = Preferences.Get("username", "0");
+        //validarLogin();
+        string username = Preferences.Get("email", "0");
         Username.Text = username;
-        string idmiembro = Preferences.Get("idmiembro", "0");
+        string idmiembro = Preferences.Get("idMiembro", "0");
         idMiembro.Text = idmiembro;
     }
 private async void OnClickHistorialPagos(object sender, EventArgs e)
     {
+
 		await Navigation.PushAsync(new HistorialPagoPage(_APIService));
     }
 
@@ -32,6 +40,14 @@ private async void OnClickHistorialPagos(object sender, EventArgs e)
 
     private async void OnClickDetallesMembresia(object sender, EventArgs e)
     {
+        string idMembresia = Preferences.Get("idMembresia", "0");
+        int.TryParse(idMembresia, out int id);
+
+        Membresia membresia = await _APIService.GetMembresiaByID(id);
+        Preferences.Set("nombreMembresia", membresia.nombreMembresia);
+        Preferences.Set("duracionMembresia", membresia.duracionMembresia.ToString());
+        Preferences.Set("precioMembresia", membresia.precioMembresia.ToString());
+
         await Navigation.PushAsync(new DetallesMembresiaPage(_APIService));
     }
 

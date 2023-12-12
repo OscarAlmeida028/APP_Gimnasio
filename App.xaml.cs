@@ -1,4 +1,6 @@
-﻿namespace APP_Gimnasio
+﻿using APP_Gimnasio.Models;
+
+namespace APP_Gimnasio
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
             APIService apiservice = new APIService();
-            MainPage = new NavigationPage(new LoginPage(apiservice));
+            MainPage = new NavigationPage(new HomePage(apiservice));
         }
     }
 }

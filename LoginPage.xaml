@@ -88,13 +88,5 @@
                BackgroundColor="Green"
                Clicked="OnClickLogin">
         </Button>
-
-        <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="Center">
-            <Label Text="Aún no tienes cuenta?" TextColor="Gray" />
-            <Button Text="Registrarse"
-                    TextColor="DarkCyan" 
-                    Background="Transparent"
-                    Clicked="OnClickRegistro"/>
-        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>
