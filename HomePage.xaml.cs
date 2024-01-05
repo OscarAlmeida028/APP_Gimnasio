@@ -21,7 +21,7 @@ public partial class HomePage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        //validarLogin();
+        validarLogin();
         string username = Preferences.Get("email", "0");
         Username.Text = username;
         string idmiembro = Preferences.Get("idMiembro", "0");
@@ -40,15 +40,25 @@ private async void OnClickHistorialPagos(object sender, EventArgs e)
 
     private async void OnClickDetallesMembresia(object sender, EventArgs e)
     {
-        string idMembresia = Preferences.Get("idMembresia", "0");
-        int.TryParse(idMembresia, out int id);
+        try
+        {
+            string idMiembro = Preferences.Get("idMiembro", "0");
+            int.TryParse(idMiembro, out int id);
 
-        Membresia membresia = await _APIService.GetMembresiaByID(id);
-        Preferences.Set("nombreMembresia", membresia.nombreMembresia);
-        Preferences.Set("duracionMembresia", membresia.duracionMembresia.ToString());
-        Preferences.Set("precioMembresia", membresia.precioMembresia.ToString());
+            Miembro miembro = await _APIService.GetMiembroByID(id);
 
-        await Navigation.PushAsync(new DetallesMembresiaPage(_APIService));
+            string idMembresia = Preferences.Get("idMembresia", "0");
+
+            Membresia membresia = await _APIService.GetMembresiaByID(miembro.idMembresia);
+            Preferences.Set("nombreMembresia", membresia.nombreMembresia);
+            Preferences.Set("duracionMembresia", membresia.duracionMembresia.ToString());
+            Preferences.Set("precioMembresia", membresia.precioMembresia.ToString());
+
+            await Navigation.PushAsync(new DetallesMembresiaPage(_APIService));
+
+        }catch (Exception ex) { }
+
+
     }
 
     private async void OnClikDetallesMiembro(object sender, EventArgs e)

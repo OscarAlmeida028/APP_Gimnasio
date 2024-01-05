@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_Gimnasio.NuevoPagoPage"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False"             
+             Title="Nuevo Pago">
+    <VerticalStackLayout
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+
+        <StackLayout Padding="5">
+            <Label Text="Fecha Pago:" FontFamily="NovaSquare-Regular" HorizontalOptions="Center"/>
+            <DatePicker
+            x:Name="PagoFecha"
+            Format="dd-MM-yyyy"/>
+            <TimePicker x:Name="CaducidadHora" Format="HH:mm"/>
+        </StackLayout>
+
+        <StackLayout Padding="5">
+            <Entry Placeholder="Monto" x:Name="Monto" />
+        </StackLayout>
+
+        <StackLayout Padding="5">
+            <Label Text="Tarjeta:" FontFamily="NovaSquare-Regular" HorizontalOptions="Center"/>
+            <Picker x:Name="TipoTarjeta" Title="Seleccionar tarjeta" HorizontalOptions="Center" WidthRequest="300"/>
+        </StackLayout>
+
+        <StackLayout Padding="5">
+            <Entry Placeholder="Número de Tarjeta" x:Name="NumTarjeta" />
+            <Entry Placeholder="CVV" x:Name="CVV" />
+        </StackLayout>
+
+        <StackLayout Padding="5">
+            <Label Text="Fecha Caducidad:" FontFamily="NovaSquare-Regular" HorizontalOptions="Center"/>
+            <DatePicker
+            x:Name="CaducidadFecha"
+            Format="dd-MM-yyyy"/>
+
+        </StackLayout>
+        
+        <StackLayout Padding="5">
+            <Entry Placeholder="Titular de la Tarjeta" x:Name="Titular" />
+        </StackLayout>
+
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Padding="5"
+            Spacing="10">
+            <Button Text="Pagar" FontSize="30" Clicked="OnClickPagar"/>
+            <Button Text="Regresar" FontSize="30" Clicked="OnClickRegresar"/>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

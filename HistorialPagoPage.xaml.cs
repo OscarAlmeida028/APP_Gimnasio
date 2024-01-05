@@ -16,14 +16,26 @@ public partial class HistorialPagoPage : ContentPage
 
     protected async override void OnAppearing()
     {
-        base.OnAppearing();
-        base.OnAppearing();
-        string idMiembro = Preferences.Get("idMiembro", "0");
-        string correoMiembro = Preferences.Get("email", "0");
-        correo.Text = correoMiembro;
-        int.TryParse(idMiembro, out int id);
-        List<Pago> ListaPagos = await _APIService.GetPagosPorMiembro(id);
-        pagos = new ObservableCollection<Pago>(ListaPagos);
-        listaPagos.ItemsSource = pagos;
+        try
+        {
+            base.OnAppearing();
+            string idMiembro = Preferences.Get("idMiembro", "0");
+            string correoMiembro = Preferences.Get("email", "0");
+            correo.Text = correoMiembro;
+            int.TryParse(idMiembro, out int id);
+
+            List<Pago> ListaPagos = await _APIService.GetPagosPorMiembro(id);
+            pagos = new ObservableCollection<Pago>(ListaPagos);
+            listaPagos.ItemsSource = pagos;
+        }catch (Exception e)
+        {
+            
+        }
+
+    }
+
+    private async void OnClickGoPagar(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new NuevoPagoPage(_APIService));
     }
 }

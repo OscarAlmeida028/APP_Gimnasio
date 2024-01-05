@@ -6,16 +6,29 @@
              NavigationPage.HasBackButton="True"
              Title="Historial de Pagos">
     <VerticalStackLayout
-        Spacing="20">
+        Spacing="20"
+        Padding="5">
         <StackLayout
             Spacing="10">
-            <Label
-            Text="Pagos"
-            FontSize="50"
-            HorizontalOptions="Center"
-            FontAttributes="Bold"
-            FontFamily="NovaSquare-Regular"/>
             <StackLayout
+                Spacing="10"
+                Orientation="Horizontal"
+                HorizontalOptions="Center">
+                <Label
+                    Text="Pagos"
+                    FontSize="50"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    FontFamily="NovaSquare-Regular"/>
+                <Button
+                    Text="Pagar"
+                    FontSize="20"
+                    CornerRadius="30"
+                    BackgroundColor="ForestGreen"
+                    Clicked="OnClickGoPagar"
+                />
+            </StackLayout>
+                <StackLayout
                 Orientation="Horizontal"
                 HorizontalOptions="Center"
                 Spacing="10">

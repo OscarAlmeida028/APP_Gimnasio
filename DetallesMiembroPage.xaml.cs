@@ -32,8 +32,12 @@ public partial class DetallesMiembroPage : ContentPage
 
     private async void OnClickCerrarSesion(object sender, EventArgs e)
     {
-        Preferences.Set("username", "0");
-        await Navigation.PushAsync(new LoginPage(_APIService));
+        try
+        {
+            Preferences.Set("username", "0");
+            await Navigation.PushAsync(new LoginPage(_APIService));
+        }catch(Exception ex) { }
+
     }
 
     private async void OnClicKCambiar(object sender, EventArgs e)
