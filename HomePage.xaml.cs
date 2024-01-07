@@ -6,11 +6,13 @@ namespace APP_Gimnasio;
 public partial class HomePage : ContentPage
 {
     private readonly APIService _APIService;
+
     public HomePage(APIService apiservice)
 	{
 		InitializeComponent();
         _APIService = apiservice;
 	}
+
     private async void validarLogin()
     {
         if (Preferences.Get("idMiembro", "0").Equals("0"))
@@ -18,6 +20,7 @@ public partial class HomePage : ContentPage
             await Navigation.PushAsync(new LoginPage(_APIService));
         }
     }
+
     protected override async void OnAppearing()
     {
         base.OnAppearing();
@@ -27,7 +30,8 @@ public partial class HomePage : ContentPage
         string idmiembro = Preferences.Get("idMiembro", "0");
         idMiembro.Text = idmiembro;
     }
-private async void OnClickHistorialPagos(object sender, EventArgs e)
+
+    private async void OnClickHistorialPagos(object sender, EventArgs e)
     {
 
 		await Navigation.PushAsync(new HistorialPagoPage(_APIService));
@@ -45,14 +49,13 @@ private async void OnClickHistorialPagos(object sender, EventArgs e)
             string idMiembro = Preferences.Get("idMiembro", "0");
             int.TryParse(idMiembro, out int id);
 
-            Miembro miembro = await _APIService.GetMiembroByID(id);
+            Utils.Utils._viewModel.Miembro = await _APIService.GetMiembroByID(id);
 
-            string idMembresia = Preferences.Get("idMembresia", "0");
-
-            Membresia membresia = await _APIService.GetMembresiaByID(miembro.idMembresia);
-            Preferences.Set("nombreMembresia", membresia.nombreMembresia);
-            Preferences.Set("duracionMembresia", membresia.duracionMembresia.ToString());
-            Preferences.Set("precioMembresia", membresia.precioMembresia.ToString());
+            // ViewModel
+            Utils.Utils._viewModel.Membresia = await _APIService.GetMembresiaByID(Utils.Utils._viewModel.Miembro.idMembresia);
+            Preferences.Set("nombreMembresia", Utils.Utils._viewModel.Membresia.nombreMembresia);
+            Preferences.Set("duracionMembresia", Utils.Utils._viewModel.Membresia.duracionMembresia.ToString());
+            Preferences.Set("precioMembresia", Utils.Utils._viewModel.Membresia.precioMembresia.ToString());
 
             await Navigation.PushAsync(new DetallesMembresiaPage(_APIService));
 

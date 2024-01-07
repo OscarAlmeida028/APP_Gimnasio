@@ -10,6 +10,7 @@ namespace APP_Gimnasio;
 public partial class LoginPage : ContentPage
 {
     private readonly APIService _APIService;
+
     public LoginPage(APIService apiservice)
 	{
         InitializeComponent();
@@ -27,15 +28,15 @@ public partial class LoginPage : ContentPage
             passwordMiembro = password,
         };
         
-        Miembro miembro2 = await _APIService.LoginMiembro(miembro);
-        if (miembro2 != null)
+        Utils.Utils._viewModel.Miembro = await _APIService.LoginMiembro(miembro);
+        if (Utils.Utils._viewModel.Miembro != null)
         { 
-            Preferences.Set("idMiembro", miembro2.idMiembro.ToString());
-            Preferences.Set("idMembresia",miembro2.idMembresia.ToString());
-            Preferences.Set("nombre", miembro2.nombreMiembro);
-            Preferences.Set("apellido", miembro2.apellidoMiembro);
-            Preferences.Set("email", miembro2.emailMiembro);
-            Preferences.Set("fechaInscripcion", miembro2.fechaInscripcion.ToString());
+            Preferences.Set("idMiembro", Utils.Utils._viewModel.Miembro.idMiembro.ToString());
+            Preferences.Set("idMembresia", Utils.Utils._viewModel.Miembro.idMembresia.ToString());
+            Preferences.Set("nombre", Utils.Utils._viewModel.Miembro.nombreMiembro);
+            Preferences.Set("apellido", Utils.Utils._viewModel.Miembro.apellidoMiembro);
+            Preferences.Set("email", Utils.Utils._viewModel.Miembro.emailMiembro);
+            Preferences.Set("fechaInscripcion", Utils.Utils._viewModel.Miembro.fechaInscripcion.ToString());
 
             var toast = Toast.Make("Ingreso Correcto", ToastDuration.Short, 14);
             await toast.Show();
