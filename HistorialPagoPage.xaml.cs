@@ -7,8 +7,7 @@ namespace APP_Gimnasio;
 public partial class HistorialPagoPage : ContentPage
 {
     private readonly APIService _APIService;
-    //ObservableCollection<Pago> pagos;
-
+    ObservableCollection<Pago> pagos;
     public HistorialPagoPage(APIService apiservice)
 	{
 		InitializeComponent();
@@ -26,9 +25,8 @@ public partial class HistorialPagoPage : ContentPage
             int.TryParse(idMiembro, out int id);
 
             List<Pago> ListaPagos = await _APIService.GetPagosPorMiembro(id);
-            // ViewModel
-            Utils.Utils._viewModel.ListaDePagos = new ObservableCollection<Pago>(ListaPagos);
-            listaPagos.ItemsSource = Utils.Utils._viewModel.ListaDePagos;
+            pagos = new ObservableCollection<Pago>(ListaPagos);
+            listaPagos.ItemsSource = pagos;
         }catch (Exception e)
         {
             

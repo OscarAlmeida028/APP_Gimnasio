@@ -1,5 +1,4 @@
 using APP_Gimnasio.Models;
-using APP_Gimnasio.Models.ViewModels;
 using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
 
@@ -8,12 +7,10 @@ namespace APP_Gimnasio;
 public partial class CambioContra : ContentPage
 {
     private readonly APIService _APIService;
-
     public CambioContra(APIService apiservice)
 	{
 		InitializeComponent();
         _APIService = apiservice;
-
     }
 
     private async void OnClickCambiarContra(object sender, EventArgs e)
@@ -26,13 +23,12 @@ public partial class CambioContra : ContentPage
 
         if(contraActual != null || contraNueva != null)
         {
-            // Cambio ViewModel
-            Utils.Utils._viewModel.Miembro = await _APIService.GetMiembroByID(id);
+            Miembro miembro = await _APIService.GetMiembroByID(id);
 
-            if (Utils.Utils._viewModel.Miembro.passwordMiembro.ToString() == contraActual)
+            if (miembro.passwordMiembro.ToString() == contraActual)
             {
-                Utils.Utils._viewModel.Miembro.passwordMiembro = contraNueva;
-                Miembro miembroActualizado = await _APIService.UpdateMiembro(Utils.Utils._viewModel.Miembro, id);
+                miembro.passwordMiembro = contraNueva;
+                Miembro miembroActualizado = await _APIService.UpdateMiembro(miembro, id);
                 if (miembroActualizado != null)
                 {
                     var toast = Toast.Make("Cambio exitoso", ToastDuration.Short, 14);

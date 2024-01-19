@@ -73,7 +73,7 @@ namespace APP_Gimnasio
                 }
 
                 // Construir el objeto de Pago
-                Utils.Utils._viewModel.Pago = new Pago
+                Pago nuevoPago = new Pago
                 {
                     miembroId = id,
                     fechaPago = fechaPago,
@@ -86,7 +86,7 @@ namespace APP_Gimnasio
                 };
 
                 // Llamar al servicio para realizar el pago
-                await RealizarPago(Utils.Utils._viewModel.Pago);
+                await RealizarPago(nuevoPago);
             }
             catch (Exception ex)
             {
